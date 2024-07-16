@@ -1,5 +1,4 @@
-const reverseString = () => {
-    const myWordToReverse: string = "Bukola"
+const reverseString = (myWordToReverse: string) => {
     return myWordToReverse.split("").reverse().join("")
 }
 

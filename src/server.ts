@@ -11,9 +11,10 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("tiny"));
 
-app.get("/reverse/myWordToReverse", (req: any, res: any) => {
-    const stringReversed = reverseString()
-    res.send(stringReversed)
+app.get("/reverse/:myWordToReverse", (req: any, res: any) => {
+    const myWordToReverse = (req.params.myWordToReverse)
+
+    res.send(reverseString(myWordToReverse))
 })
 
 const PORT = process.env.PORT ?? 3003;
